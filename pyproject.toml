@@ -32,6 +32,37 @@ dependencies = [
     "peft==0.6.0",
 ]
 
+[project.optional-dependencies]
+
+## User extra sets ##
+
+llama-cpp = [
+    "llama-cpp-python>=0.2.55,<0.3",
+]
+
+all = [
+    "caikit-nlp[llama-cpp]",
+]
+
+## Dev extra sets ##
+
+dev-test = [
+    "evaluate", # Currently used for sample scripts etc.
+    "pytest==7.1.3",
+    "pytest-cov>=2.10.1,<3.0",
+    "pytest-html>=3.1.1,<4.0",
+    "wheel>=0.38.4",
+]
+
+dev-fmt = [
+    "pre-commit>=3.0.4,<4.0",
+    "pylint>=2.16.2,<3.0",
+]
+
+all-dev = [
+    "caikit-nlp[all, dev-test, dev-fmt]"
+]
+
 [tool.setuptools.packages.find]
 exclude = ["tests", "tests.*"]
 namespaces = false
