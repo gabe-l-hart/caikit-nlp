@@ -93,7 +93,7 @@ class TextGeneration(ModuleBase):
     def __init__(
         self,
         model_name: str,
-        model: PretrainedModelBase = None,
+        model: Optional[PretrainedModelBase] = None,
         bos_token: Optional[str] = None,
         sep_token: Optional[str] = None,
         eos_token: Optional[str] = None,
